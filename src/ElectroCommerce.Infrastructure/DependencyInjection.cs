@@ -1,4 +1,6 @@
 ﻿using Domain.Interface;
+using ElectroCommerce.Domain.Interface;
+using ElectroCommerce.Infrastructure.Repositories;
 using Infrastructure.Persistence;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +18,10 @@ namespace Infrastructure
                 options.UseSqlServer(connectionString));
 
             services.AddScoped<ISupplierRepository, SupplierRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IBrandRepository, BrandRepository>();
+            services.AddScoped<IProductVariantRepository, ProductVariantRepository>();
 
             return services;
         }

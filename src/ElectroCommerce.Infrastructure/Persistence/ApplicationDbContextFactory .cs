@@ -10,7 +10,7 @@ namespace Infrastructure.Persistence
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
 
-            var basePath = Path.Combine(Directory.GetCurrentDirectory(), "../Api");
+            var basePath = Path.Combine(Directory.GetCurrentDirectory(), "../ElectroCommerce.Api");
 
             var configuration = new ConfigurationBuilder()
                 .SetBasePath(basePath)

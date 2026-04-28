@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using ElectroCommerce.Domain.Entities;
 using Infrastructure.Persistence.Seed;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,6 +23,7 @@ namespace Infrastructure.Persistence
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<VariantAttribute> VariantAttributes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

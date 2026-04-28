@@ -15,9 +15,20 @@ namespace Domain.Configuration
 
             builder.HasIndex(p => p.ProductId);
 
+            builder.HasOne(v => v.Product)
+                .WithMany(p => p.Variants)
+                .HasForeignKey(s => s.ProductId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             builder.HasMany(v => v.Images)
                 .WithOne(i => i.ProductVariant)
-                .HasForeignKey(i => i.ProductVariantId);
+                .HasForeignKey(i => i.ProductVariantId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            builder.HasMany(v => v.Attributes)
+                .WithOne(va => va.ProductVariant)
+                .HasForeignKey(va => va.ProductVariantId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
