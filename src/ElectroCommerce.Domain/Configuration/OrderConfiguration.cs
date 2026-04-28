@@ -28,7 +28,7 @@ namespace Domain.Configuration
             builder.HasMany(x => x.OrderDetails)
                    .WithOne(x => x.Order)
                    .HasForeignKey(x => x.OrderId)
-                   .OnDelete(DeleteBehavior.Cascade);
+                   .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

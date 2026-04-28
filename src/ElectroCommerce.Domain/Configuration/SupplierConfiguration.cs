@@ -9,6 +9,11 @@ namespace Domain.Configuration
         public void Configure(EntityTypeBuilder<Supplier> builder)
         {
             builder.HasQueryFilter(p => !p.IsDeleted);
+
+            builder.HasMany(x => x.Orders)
+                .WithOne(x => x.Supplier)
+                .HasForeignKey(x => x.EmployeeId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

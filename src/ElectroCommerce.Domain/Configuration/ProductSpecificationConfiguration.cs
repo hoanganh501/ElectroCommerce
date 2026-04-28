@@ -17,6 +17,11 @@ namespace Domain.Configuration
                 .IsRequired();
 
             builder.HasIndex(p => p.ProductId);
+
+            builder.HasOne(p => p.Product)
+                .WithMany(p => p.Specifications)
+                .HasForeignKey(p => p.ProductId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

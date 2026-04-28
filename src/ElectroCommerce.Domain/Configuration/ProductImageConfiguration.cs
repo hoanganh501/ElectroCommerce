@@ -10,8 +10,13 @@ namespace Domain.Configuration
         {
             builder.HasQueryFilter(p => !p.IsDeleted);
 
-            builder.Property(p => p.KeyImage)
+            builder.Property(p => p.Url)
                 .IsRequired();
+
+            builder.HasOne(p => p.ProductVariant)
+                .WithMany(v => v.Images)
+                .HasForeignKey(p => p.ProductVariantId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasIndex(p => p.ProductVariantId);
         }
