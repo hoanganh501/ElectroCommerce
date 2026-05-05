@@ -5,6 +5,6 @@ namespace ElectroCommerce.Application.Request
     {
         public decimal Price { get; set; }
         public int Quantity { get; set; }
-        public List<VariantAttributeRequest> Attribute { get; set; }
+        public List<Guid> AttributeValueIds { get; set; }
     }
 }

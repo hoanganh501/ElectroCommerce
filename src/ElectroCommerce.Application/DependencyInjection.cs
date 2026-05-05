@@ -3,7 +3,6 @@ using Application.Service;
 using AutoMapper;
 using ElectroCommerce.Application.Interface;
 using ElectroCommerce.Application.Service;
-using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -14,7 +13,6 @@ namespace Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             services.AddScoped<ISupplierService, SupplierService>();
             services.AddScoped<IProductService, ProductService>();

@@ -2,7 +2,7 @@
 {
     public enum ImageType
     {
-        thumbnail,
-        variant
+        Thumbnail,
+        Variant
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace ElectroCommerce.Application.Request
+﻿namespace ElectroCommerce.Domain.DTO
 {
-    public class VariantAttributeRequest
+    public class AttributeDto
     {
         public string Name { get; set; }
         public string Value { get; set; }

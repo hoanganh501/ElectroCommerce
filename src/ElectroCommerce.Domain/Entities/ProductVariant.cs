@@ -8,7 +8,7 @@ namespace Domain.Entities
         public Product Product { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
-        public ICollection<VariantAttribute> Attributes { get; set; } = new List<VariantAttribute>();
+        public ICollection<ProductVariantAttributeValue> ProductVariantAttributeValues { get; set; } = new List<ProductVariantAttributeValue>();
         public ICollection<ProductImage> Images { get; set; }
     }
 }

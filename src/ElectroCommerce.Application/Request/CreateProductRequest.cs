@@ -1,5 +1,4 @@
-﻿using FluentValidation;
-
+﻿
 
 namespace ElectroCommerce.Application.Request
 {
