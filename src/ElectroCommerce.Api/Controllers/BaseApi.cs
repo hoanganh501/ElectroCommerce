@@ -7,7 +7,6 @@ namespace Api.Controllers
     [ApiController]
     [Route("api/[controller]")]
     [Authorize]
-    [AllowAnonymous]
     public abstract class BaseApi : Controller
     {
         protected Guid GetCurrentUser()
