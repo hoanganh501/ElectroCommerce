@@ -17,5 +17,10 @@ namespace ElectroCommerce.Infrastructure.Repositories
         {
             return await _dbContext.Brands.FindAsync(id);
         }
+
+        public async Task<IEnumerable<Brand>> GetAllAsync()
+        {
+            return await _dbContext.Brands.AsNoTracking().ToListAsync();
+        }
     }
 }
