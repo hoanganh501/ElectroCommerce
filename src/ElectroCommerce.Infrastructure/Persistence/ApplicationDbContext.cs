@@ -1,5 +1,7 @@
 ﻿using Domain.Entities;
+using ElectroCommerce.Domain.Configuration;
 using ElectroCommerce.Domain.Entities;
+using ElectroCommerce.Infrastructure.Persistence.Seed;
 using Infrastructure.Persistence.Seed;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,10 +26,13 @@ namespace Infrastructure.Persistence
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<VariantAttribute> VariantAttributes { get; set; }
+        public DbSet<ProductVariantAttributeValue> ProductVariantAttributeValues { get; set; }
+        public DbSet<VariantAttributeValue> VariantAttributeValues { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            builder.ApplyConfigurationsFromAssembly(typeof(ProductVariantAttributeValueConfiguration).Assembly);
         }
 
         public static async Task SeedAsync(ApplicationDbContext context)
@@ -35,6 +40,7 @@ namespace Infrastructure.Persistence
             await DefaultCategory.SeedAsync(context);
             await DefaultBrand.SeedAsync(context);
             await DefaultSupelier.SeedAsync(context);
+            await DefaultVariantAttribute.SeedAsync(context);
         }
     }
 }

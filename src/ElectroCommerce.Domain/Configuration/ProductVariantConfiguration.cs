@@ -24,11 +24,6 @@ namespace Domain.Configuration
                 .WithOne(i => i.ProductVariant)
                 .HasForeignKey(i => i.ProductVariantId)
                 .OnDelete(DeleteBehavior.NoAction);
-
-            builder.HasMany(v => v.Attributes)
-                .WithOne(va => va.ProductVariant)
-                .HasForeignKey(va => va.ProductVariantId)
-                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -21,5 +21,11 @@ namespace ElectroCommerce.Api.Controllers
         {
             return Ok(await _productService.CreateProductAsync(request));
         }
+
+        [HttpPost("GetDetail")]
+        public async Task<IActionResult> GetProductDetailAsync(Guid id, ProductDetailRequest? request)
+        {
+            return Ok(await _productService.GetProductDetailAsync(id, request));
+        }
     }
 }
