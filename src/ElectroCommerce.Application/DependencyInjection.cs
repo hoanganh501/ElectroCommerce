@@ -17,6 +17,7 @@ namespace Application
             services.AddScoped<ISupplierService, SupplierService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProductVariantService, ProductVariantService>();
+            services.AddScoped<ICategoryService, CategoryService>();
 
             return services;
         }
