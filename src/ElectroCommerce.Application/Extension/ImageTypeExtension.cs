@@ -1,5 +1,5 @@
 ﻿using Domain.Enum;
-using ElectroCommerce.Application.Enum;
+using ElectroCommerce.Application.Enums;
 
 namespace ElectroCommerce.Application.Extension
 {

@@ -7,5 +7,6 @@ namespace ElectroCommerce.Application.Interface
     {
         Task<Guid> CreateProductAsync(CreateProductRequest product);
         Task<ProductDetailResponse> GetProductDetailAsync(Guid id, ProductDetailRequest? request);
+        Task<ProductPaginationResponse> SearchWithPaginationAsync(SearchProductRequest request);
     }
 }
