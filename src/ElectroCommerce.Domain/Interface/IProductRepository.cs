@@ -9,6 +9,6 @@ namespace ElectroCommerce.Domain.Interface
         Task<int> SaveChangesAsync();
         Task<Product?> GetProductById(Guid id);
         Task<ProductDto?> GetProductDetail(Guid id, List<ProductFilterDto>? filters);
-        
+        IQueryable<Product> GetQueryable();
      }
 }

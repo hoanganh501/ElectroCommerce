@@ -27,5 +27,11 @@ namespace ElectroCommerce.Api.Controllers
         {
             return Ok(await _productService.GetProductDetailAsync(id, request));
         }
+
+        [HttpPost("SearchWithPagination")]
+        public async Task<IActionResult> SearchWithPaginationAsync(SearchProductRequest request)
+        {
+            return Ok(await _productService.SearchWithPaginationAsync(request));
+        }
     }
 }

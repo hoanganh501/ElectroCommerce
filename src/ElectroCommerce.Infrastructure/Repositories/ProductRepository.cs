@@ -102,5 +102,10 @@ namespace ElectroCommerce.Infrastructure.Repositories
                 }).FirstOrDefaultAsync();
             return result;
         }
+
+        public IQueryable<Product> GetQueryable()
+        {
+            return _dbContext.Products.AsNoTracking();
+        }
     }
 }

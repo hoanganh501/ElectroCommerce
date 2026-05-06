@@ -16,6 +16,8 @@ namespace ElectroCommerce.Application.Mapper
             CreateMap<ProductVariantDto, ProductVariantModel>();
             CreateMap<SpecificationDto, SpecificationModel>();
             CreateMap<ImageDto, ImageModel>();
+
+
         }
     }
 }
