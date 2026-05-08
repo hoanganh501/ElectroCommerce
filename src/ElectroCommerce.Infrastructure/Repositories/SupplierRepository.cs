@@ -7,15 +7,21 @@ namespace Infrastructure.Repositories
 {
     public class SupplierRepository: ISupplierRepository
     {
-        private readonly ApplicationDbContext _context;
-        public SupplierRepository(ApplicationDbContext context)
+        private readonly ApplicationDbContext _dbContext;
+        public SupplierRepository(ApplicationDbContext dbContext)
         {
-            _context = context;
+            _dbContext = dbContext;
         }
 
         public async Task<IEnumerable<Supplier>> GetAllSuppliersAsync()
         {
-            return await _context.Suppliers.ToListAsync();
+            return await _dbContext.Suppliers.ToListAsync();
+        }
+
+        public async Task SaveAllAsync(IEnumerable<Supplier> suppliers)
+        {
+            await _dbContext.Suppliers.AddRangeAsync(suppliers);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

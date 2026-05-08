@@ -1,4 +1,5 @@
 ﻿using Application.Interface;
+using ElectroCommerce.Application.Request;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,6 +18,13 @@ namespace Api.Controllers
         {
             var suppliers = await _supplierService.GetAllSuppliersAsync();
             return Ok(suppliers);
+        }
+
+        [HttpPost("import")]
+        public async Task<IActionResult> ImportSuplierAsyns(ImportSuplierRequest request)
+        {
+            await _supplierService.ImportSuplierAsyns(request);
+            return Ok();
         }
     }
 }
